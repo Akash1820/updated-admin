@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>header</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+	.fadeInDown{
+		animation-name: fadeInDown;
+	}
+.animated{
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+@media (min-width: 768px){
+	.col-sm-8{
+     width: 66.66667%;
+}
+}
+@media (min-width: 768px){
+	.col-sm-8{
+     float: left;
+}
+}
+
+@media only screen and (max-width: 991px){
+.logo img {
+    width: 100%;
+}
+}
+@media only screen and (max-width: 991px){
+
+.logo img {
+    width: 100%;
+}
+}
+img {
+    max-width: 100%;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #b50d29;
+}
+div.polaroid {
+  width: 100%;
+  box-shadow: 4px 6px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.headernew{
+	color: white;
+	padding: 5px;
+	margin: 0px;
+}
+    .icons{
+         float: right;
+        padding-left: 900px;
+    }
+    .date{
+        float: left
+    }
+
+</style>
+</head>
+<body>
+ <div class="navbar">
+ 	<div class="container-fluid" style="background-color: #b50d29;">
+ 		<div class="container">
+ 			<div class="row" style="background-color: #b50d29;>
+ 				<div class="col-md-3">
+            <div class="date">
+ 		<p class="headernew"><span id="datetime"></span></p></div>
+                                                <div class="icons">
+       <a href="https://www.facebook.com/BPRDIndia/"><i class="fa fa-facebook-square" align="right" style="font-size:36px;color:white"></i></a>
+     <a href="https://twitter.com/BPRDIndia?s=20"><i class="fa fa-twitter-square" style="font-size:36px;color:white"></i></a>                
+    <a href="https://www.youtube.com/channel/UCGhrg_cnnGuhwXfCU16kYow"><i class="fa fa-youtube-square" style="font-size:36px;color:white"></i></a>
+</div>
+        </div>
+                                                                                                                                                   </div>
+ 				</div>
+ 				<div class="col-md-9">
+ 					
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 	<div class="container-fluid">
+ 		<div class="container">
+ 			<div class="row">
+ 				<div id="logo" class="col-md-8 col-sm-8 col-xs-12 animated fadeInDown">
+ 					<h1 class="logo">
+ 						<a href="/" title="Home">
+ 						   <img src="header1.jpeg" alt="Home" style="">
+ 						</a>
+ 					</h1>
+ 				</div>
+ 			<div class="col-md-4 col-sm-4 col-xs-12 search ">
+ 				<br>
+ 				<div class="polaroid">
+ 					<img src="saynotocrime.jpg">
+ 				</div>
+ 					
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<div class="container-fluid" style="background-color: black;">
+ 		<div class="container">
+ 			<div class="topnav" id="topnav">
+ 				<ul>
+                   <li><a class="active" href="#home">Home</a></li>
+                   <li><a href="#news">Emergency Complaint</a></li>
+                   <li><a href="#contact">Report Crime</a></li>
+                   <li><a href="#about">Crime Awareness</a></li>
+                   <li><a href="#about">Resources</a></li>
+                   <li><a href="#about">Helpline</a></li>
+                   <li><a href="#about">Contact Us</a></li>
+                                                                                                       </li>
+                </ul>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <!---<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+</script>-->
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+</script>
+</body>
+</html>
