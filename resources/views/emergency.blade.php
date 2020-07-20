@@ -180,7 +180,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
         </div>
         </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: white;">
     <div class="container">
       <div class="row">
         <div id="logo" class="col-md-8 col-sm-8 col-xs-12 animated fadeInDown">
@@ -323,10 +323,10 @@ if(typeof _bsa !== 'undefined' && _bsa) {
         <tr>
           <th>Complaint_Id</th>
 
-          <th>User_Name</th>
-          <th>Contact_Number</th>
-          <th>Report Time</th> 
+          <th>Report Time</th>
           <th>Police Station</th>
+          <th>Police Station Address</th> 
+          <th>Crime Date</th>
           <th>Crime_Location</th> 
           <th>Complaint</th>
           
@@ -400,14 +400,14 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 
   <div class="form-group">
     <label for="exampleFormControlFile1">Investigation Report</label>
-    <input type="file" name="file" onchange="form.submit()">
+    <input type="file" name="file" onchange="form.submit()" onclick="">
   </div>
 </form>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>

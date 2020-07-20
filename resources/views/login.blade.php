@@ -80,7 +80,7 @@
         </div>
         </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: white;">
     <div class="container">
       <div class="row">
         <div id="logo" class="col-md-8 col-sm-8 col-xs-12 animated fadeInDown">
@@ -104,7 +104,7 @@
     <div class="container" style="margin-bottom: 0;">
       <div class="topnav" id="topnav">
         <ul>
-         <li> <a href="login_admin" style="float: right;">Adminstration Login</a></li>
+         <li> <a href="login_admin" style="">Adminstration Login</a></li>
 
                 </ul>
       </div>
@@ -113,7 +113,7 @@
  </div>
 
  <fieldset>
-  <legend><img src="assets/images/logosr2.jpg" text-align="center" style="border-radius: 15px; height: 95px; width: 280px; margin-top: 25px;"></legend>
+  <legend><img src="assets/images/bprd-logo.png" text-align="center" style="border-radius: 15px; height: 295px; width: 280px; margin-top: 25px;"></legend>
      <center>
      <h2>Bureau of Police and Research Department</h2>
      <br><br>
@@ -128,7 +128,7 @@
     <i class="fa fa-key icon"></i>
     <input class="input-field" type="password" placeholder="Password" name="psw">
   </div>
-         <button type="submit" onclick="form.submit()" value="LOGIN">LOGIN</button>
+         <button type="submit" onclick="form.submit()" value="LOGIN" style="border-radius: 10px;">LOGIN</button>
          <br><br>
     
     </form>
@@ -137,7 +137,17 @@
     Want to Register As Police Station Admin <a href="RegReq"> Click Here </a>
 </fieldset>   
     
-    
+    <footer class="page-footer" style="background-color: black;">
+
+  <!-- Copyright -->
+    <div class="row footer-bottom">
+        <div  style ="padding :35px;margin-right:0px; text-align: center; color: white;"class="col-md-10">
+          <center>
+            Site developed and maintained by Team Code Gear,<a href="https://www.facebook.com/pages/gitam-kablana/384890248243377" style="color: white;">GITAM</a> , Haryana. Send your feedbacks to <a href="https://mail.google.com/mail/u/1/#search/codegearsih2020%40gmail.com"  style="color: white;">codegearsih2020@gmail.com</a> </center>
+        </div>
+    </div>
+  
+</footer> 
     
 </body>
 </html>

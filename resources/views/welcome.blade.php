@@ -179,7 +179,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
         </div>
         </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: white;">
     <div class="container">
       <div class="row">
         <div id="logo" class="col-md-8 col-sm-8 col-xs-12 animated fadeInDown">

@@ -320,7 +320,13 @@ $reg = DB::table('admin_linkreq')->get();
 
 }
 
+function Portal(){
 
+	return view('adminportal');
+}
 
+function Home(){
+	return view('home');
+}
 
 }

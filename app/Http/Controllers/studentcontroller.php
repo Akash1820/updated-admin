@@ -43,7 +43,10 @@ class Studentcontroller extends Controller
 	 $save=$file->storeAs('./public/','abc.'.$extn);
 	 $url=Storage::url('abc.pdf');
 	 $ur=explode('storage/',$url,2);
-	return $ur[1];	
+	//return $ur[1];
+	 $complaint = DB::table('urgent_comp')->get();
+        
+        return view('emergency')->with('Complaint',$complaint);	
 
 
 	}

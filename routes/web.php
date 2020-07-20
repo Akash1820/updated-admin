@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/', 'WelcomeController@ip');
+Route::get('/portal','WelcomeController@Portal');
 
 Route::get('/Complaint', 'studentcontroller@index');
 
@@ -29,6 +30,7 @@ Route::post('/store', 'studentcontroller@store');
 
 Route::get('/lreq','WelcomeController@Lreq');
 Route::post('/lreq','WelcomeController@Lreq');
+Route::get('/home','WelcomeController@Home');
 
 Route::post('/upload', 'studentcontroller@store');
 Route::post('/status_update/{id}', 'studentcontroller@update_data');

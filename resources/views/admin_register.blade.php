@@ -172,7 +172,7 @@
           <div class="input-container">
  
     <i class="fa fa-edit icon"></i>
-    <input class="input-field" type="file" id="img" name="signature" accept="image/*" placeholder="Signature" required>
+    <input class="input-field" type="file" id="img" name="signature" accept="image/*" placeholder="Signature" required >
   </div>
          <button type="submit">Register</button>
      </form>
