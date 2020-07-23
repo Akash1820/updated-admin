@@ -15,11 +15,34 @@ class Studentcontroller extends Controller
      */
      
     
-    public function index()
+    public function index(Request $req)
     {
-        $complaint = DB::table('complaints')->get();
-        
-        return view('welcome')->with('Complaint',$complaint);
+    	$user_id= $req->usrnm;
+    	$user_password= $req->psw;
+    	$get= DB::table('login_credential')
+    	->where([['User_ID','=',$user_id],['Password','=',$user_password]])
+    	->count();
+    	$data= DB::table('login_credential')
+    	->where([['User_ID','=',$user_id],['Password','=',$user_password]])
+    	->get();
+    	if($get!=0){
+    		
+    	foreach ($data as $item) {
+    		$req->session()->put('name',$user_id);
+    		$req->session()->put('password',$user_password);
+    		$req->session()->put('station_address',$item->PS_name);
+    	}
+    		$complaint = DB::table('complaints')
+    		->where('PS_name',$req->session()->get('station_address'))
+    		->get();
+    	 return view('welcome')->with('Complaint',$complaint);
+    		
+    	//	return $req->session()->get('password');
+    	}
+    	else{
+    		return "username or password invalid";
+    	}
+       
     }
    
    function ip(Request $ip)

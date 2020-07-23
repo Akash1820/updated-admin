@@ -261,7 +261,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
       <p>Very detailed & featured admin.</p>
     </div>
 
-    <!-- statistics data -->
+    <!-- statistics data 
     <div class="statistics">
       <div class="row">
         <div class="col-xl-6 pr-xl-2">
@@ -301,7 +301,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- //statistics data -->
 
   

@@ -129,7 +129,7 @@
      <h2>Bureau of Police and Research Department</h2>
      <br><br>
    </center>
-     <form action="logout" method="GET">
+     <form action="log_in" method="GET">
       {{csrf_field()}}
     
          <button type="submit" onclick="form.submit()" value="LOGIN" style="border-radius: 10px;">ADMIN LOGIN</button>

@@ -21,7 +21,7 @@ Route::get('/', 'WelcomeController@ip');
 Route::get('/portal','WelcomeController@Portal');
 
 Route::get('/Complaint', 'studentcontroller@index');
-
+Route::get('/log_in','WelcomeController@lin');
 Route::get('/ip', 'studentcontroller@ip');
 Route::post('/login', 'studentcontroller@index');
 Route::get('/login', 'studentcontroller@index');

@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     public function index()
     {
         
-        return view('welcome');
+        return view('adminportal');
     }
 public function notfound()
 {
@@ -24,8 +24,12 @@ public function notfound()
 }
    public function login($ip)
 {
-	$get=strcasecmp(trim($ip),"192.168.43.16");
-	if($get == 0)
+
+	$get=DB::table('login_credential')
+	->where('Ip_Address',trim($ip))
+	->count();
+	// $get=strcasecmp(,"192.168.43.16");
+	if($get!= 0)
 			{
 			//$reg = DB::table('admin_registration')->get();
 
@@ -37,6 +41,7 @@ public function notfound()
         
 
 		return view('login');
+				
 			}
 			else{
 		return view('Error1');
@@ -44,7 +49,9 @@ public function notfound()
 }
 function ip(Request $ip)
 	{
-		
+	$session=$ip->session()->get('name');
+		$get=strcasecmp(trim($session),"");
+		if($get==0){
 		$user=$_SERVER['HTTP_USER_AGENT'];
 		 if(strpos($user,"Windows"))
 		 {
@@ -64,6 +71,13 @@ function ip(Request $ip)
 		 {
 			 return view('Error1');
 		 }
+		}
+		else{
+			$complaint = DB::table('complaints')
+    		->where('PS_name',$ip->session()->get('station_address'))
+    		->get();
+    	 return view('welcome')->with('Complaint',$complaint);
+		}
 	}
 
 function approve(Request $Request){
@@ -86,7 +100,7 @@ $details = DB::table('login_credential')
 $details= ['name'=>$item->Name,
 'User_id'=>$item->ID_number,
 'Password'=>$item->PS_name,
-'link'=>'http://69e063fbd4c5.ngrok.io/'];
+'link'=>'http://797dd89bdb25.ngrok.io/'];
  \Mail::to($item->e_mail)->send(new Approve_reg($details));
 return redirect()->back();
 }
@@ -107,10 +121,20 @@ foreach ($reg as $item) {
 
 }
 
-function lout(){
+function lout(Request $req){
 
+	
+    		$req->session()->forget('name');
+    		$req->session()->forget('password');
+    		$req->session()->forget('station_address');
+    
+
+	return view('adminportal');
+
+}
+
+function lin(){
 	return view('login');
-
 }
 
 function srakshan()
@@ -187,7 +211,7 @@ $reg = DB::table('admin_registration')->get();
      'link'=>$link];
        
          return view('mainadmin')->with('details',$details);
-
+//return $req->session()->get('password');
 	//return view('mainadmin');
 }
 
