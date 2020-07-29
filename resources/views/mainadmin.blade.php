@@ -1,308 +1,572 @@
 
-<html lang="en">
-<!-- console.log($Reg) -->
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   
+<!DOCTYPE html>
+<html>
+
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no">
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="assets/css/header (1).css">
+    <script src="js/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- chart library  --}}
+<script src = "https://code.highcharts.com/highcharts.js"></script>  
+      <script src = "https://code.highcharts.com/modules/drilldown.js"></script>  
+      <script src = "https://code.highcharts.com/modules/data.js"></script> 
+    <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
+    <style>
+       
+       .highcharts-credits {
+display: none !important;
+}
+/* highcharts-drillup-button {
 
-  <title>Official WebPortal of BPRD| Admin </title>
-
-  <!-- Template CSS -->
-
-  <link rel="stylesheet" href="assets/css/header (1).css">
-  <link rel="stylesheet" href="assets/css/style-liberty2.css">
-  <!-- google fonts -->
-  <link href="http://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&amp;display=swap" rel="stylesheet">
-  <style>
-    .sidebar-menu-collapsed{
-      resize: none;
-    }
-* {box-sizing: border-box}
-
-/* Style the tab */
-.tab {
-  float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width: auto;
-  height: 100%;
+  display: none;
+} */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-  display: block;
-  background-color: white;
-  color: black;
-  padding: 22px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 17px;
 }
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-   background-color: #b50d29;
-  border-radius: 8px;
+.success {background-color: #4CAF50;} /* Green */
+.success:hover {background-color: #033f05cb;}
+      .sideNav {
+  background-color: #333547;
+  height: 100%;
+  position: fixed;
+  width: 210px;
+  display: inline-block;
 }
-
-/* Create an active/current "tab button" class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  float: left;
-
+h3{
+    
 }
 
 
-
-.marquee {
-            height: 50px;
-            overflow: hidden;
-            position: relative;
-            font-size: 40px;
-            color: #b50d29;
-
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            line-height: 50px;
-            text-align: center;
-            -moz-transform: translateX(100%);
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-            -moz-animation: scroll-left 2s linear infinite;
-            -webkit-animation: scroll-left 2s linear infinite;
-            animation: scroll-left 15s linear infinite;
-        }
-
-@-moz-keyframes scroll-left {
-            0% {
-                -moz-transform: translateX(100%);
-            }
-            100% {
-                -moz-transform: translateX(-100%);
-            }
-        }
-
-        @-webkit-keyframes scroll-left {
-            0% {
-                -webkit-transform: translateX(100%);
-            }
-            100% {
-                -webkit-transform: translateX(-100%);
-            }
-        }
-
-        @keyframes scroll-left {
-            0% {
-                -moz-transform: translateX(100%);
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%);
-            }
-            100% {
-                -moz-transform: translateX(-100%);
-                -webkit-transform: translateX(-100%);
-                transform: translateX(-100%);
-            }
-
-</style>
-</head>
-
-<body class="sidebar-menu-collapsed" > 
-
-<!--  <script src='../../../../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script> -->
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding : 10px;
+    margin-left: 0px;
+    display: inline-block;
+    border: 5px solid #ffff;
+    font-size: 8px;
+    cursor: pointer;
+    color:#b50d29
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+   
+    border: 5px solid #fffffb;
+    background-color:#f0f0dd;
+    color: #000;
+    cursor: pointer;
+} 
+.dataTables_filter label
+{ width: 100% }
+.dataTables_filter input
+{ width: 100% ;
   
-<!--<script src="../../../../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>-->
- 
-<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
-  	}
-})();
-</script>
-<script>
-(function(){ 
-if(typeof _bsa !== 'undefined' && _bsa) {
-	// format, zoneKey, segment:value, options
-	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+  box-shadow:0 4px 8px 0 #b50d29
 }
-})();
-</script>
-<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
-  	}
-})();
-</script>
-<!--<script>(function(v,d,o,ai){ai=d.createElement("script");ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, "//a.vdo.ai/core/w3layouts_V2/vdo.ai.js?vdo=34");</script>-->
-<div id="codefund"><!-- fallback content --></div>
-<script src="../../../../../../../codefund.io/properties/441/funder.js" async="async"></script>
-	
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-149859901-1'></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+.dataTables_filter input:focus
+{ width: 100% ;
+  box-shadow:0 4px 8px 0 #b50d29;
+  border:none
+}
+.dataTables_length{
+  display: none;
+}
+.display {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
 
-  gtag('config', 'UA-149859901-1');
-</script>
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script>
-     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-     ga('create', 'UA-149859901-1', 'demo.w3layouts.com');
-     ga('require', 'eventTracker');
-     ga('require', 'outboundLinkTracker');
-     ga('require', 'urlChangeTracker');
-     ga('send', 'pageview');
-   </script>
-<script async src='../../../../../../js/autotrack.js'></script>
+.display th, .display td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
 
-<meta name="robots" content="noindex">
-<body>
+.display tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+    </style>
+<!--    card-->
 
-<div class="navbar" style="padding: 0;">
-  <div class="container-fluid" style="background-color: #b50d29; width: 100%;">
-    <div class="container">
+    <style>
+* {
+  box-sizing: border-box;
+  
+}
+body{
+   
+ width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding:  10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+/* .row {margin: 0 -5px;} */
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.counter{
+  margin-right:0px ;
+  width:25%;
+  display: inline-block;
+  
+}
+
+/* Responsive columns */
+@media screen and (max-width: 1300px) {
+  .counter{
+    width:50%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .column {
+    width: 100%;
+    height: 25%;
+    display: block;
+    margin-bottom: 20px;
       
-        </div>
-        </div>
+  }
+  .counter{
+    width:100%;
+  }
 
-<div class="container-fluid" style="background-color: white;">
-    <div class="container">
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 #b50d29;
+/*    border-radius: 25px;*/
+  padding: 16px;
+  text-align: center;
+  /*background-image:radial-gradient(#ffffff,#ffff99);*/
+}
+        
+/*        glowing button*/
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-right: 0px;
+  }
+
+.s{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+   width: 100%;
+    color: #b50d29;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+   
+}
+.s:hover{
+    /* background: darkgreen; */
+    color: darkgreen;
+    border-radius: 50px;
+    box-shadow: 0 0 5px darkgreen,
+                0 0 25px darkgreen,
+                0 0 50px darkgreen,
+                0 0 200px darkgreen;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #03e9f4);
+}
+.s:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+.s:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+.s span{
+    position: absolute;
+    display: block;
+}
+.s span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#b50d29);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.s span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#b50d29);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.s span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#b50d29);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.s span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#b50d29);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+  
+
+        .aa{
+            font-size: 16px;
+            color: black;
+        }
+
+        .form{
+  display: flex;
+}
+        .messageText{
+            width: 80%;
+            border: 2px inset maroon;
+            resize: none;
+            height: 90%;
+            font-size: 20px;
+           box-shadow:0 4px 8px 0 #b50d29
+        }
+        .messageText:hover{
+          border: 2px outset blue;
+        }
+        .message{
+          width: 15%;
+          height:80%;
+          border-radius:20px;
+          margin-left:10px ; 
+          background:#ffff;
+          color: maroon;
+          font-size: 30px
+        }
+        .message:hover{
+          background: blue;
+          color: white
+        }
+
+
+   
+ .sidenav {
+  height: 81%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 1px;
+  background-color: #fffffb;
+  overflow-x: hidden;
+  border: outset;
+  border-top-color: transparent;
+  border-color: #b50d29;
+  word-wrap: break-word;
+  overflow-y: scroll
+}
+
+.sidenav a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #b50d29;
+  border-bottom:1px solid #ddd;
+  position: relative;
+  text-align: left
+  
+}
+::-webkit-scrollbar{
+  width: 2px
+}
+.header a,
+.link {
+  
+}
+
+.link {
+  color: #3B78E7;
+  display: inline-block;
+}
+
+/*.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}*/
+.sideNav img{
+  height: 20%;
+  align: center
+}
+.sidenav a:hover {
+  color: #ffffff;
+  background-color: #b50d29;
+}
+
+.main {
+  margin-left: 280px; /* Same as the width of the sidenav */
+  margin-right: 30px;
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.hdr{
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+/*input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}*/
+
+        </style>
+    </head>
+
+<body>
+<div class="hdr">
+<div class="container-fluid" style="background-color: #b50d29;">
+  
+      <div class="row" style="background-color: #b50d29;">
+        <div class="col-md-9 order-same order-md-2">
+            <div class="date">
+    <p class="headernew" style="color: #b50d29; font-size: 8px;">Made With Love</p>
+  </div>
+</div>
+  <!-- <div class="col-md-3 order-same order-md-2">
+                                                <div class="icons">
+       <a href="https://www.facebook.com/BPRDIndia/"><i class="fa fa-facebook-square" align="right" style="font-size:36px;color:white"></i></a>
+     <a href="https://twitter.com/BPRDIndia?s=20"><i class="fa fa-twitter-square" style="font-size:36px;color:white"></i></a>                
+    <a href="https://www.youtube.com/channel/UCGhrg_cnnGuhwXfCU16kYow"><i class="fa fa-youtube-square" style="font-size:36px;color:white"></i></a>
+</div>
+</div> -->
+        </div>
+      </div>
+
+         <div class="container-fluid" style="background-color: white;">
+    
       <div class="row">
         <div id="logo" class="col-md-8 col-sm-8 col-xs-12 animated fadeInDown">
-          <h1 class="logos">
-            <a href="loginn" title="Home">
-               <img src="assets/images/header.jpeg" alt="Home" style="">
+          <h1 class="logo">
+            <a href="" title="Home">
+               <img src="assets/images/header.jpeg" alt="Home" style="height: 100px;">
             </a>
           </h1>
         </div>
       <div class="col-md-4 col-sm-4 col-xs-12 search ">
-        <br>
+        
         <div class="polaroid">
-          <img src="assets/images/saynotocrime.jpg">
+          <img src="assets/images/saynotocrime.jpg" style="height: 80px;">
         </div>
           
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid" style="background-color: black; width: 100%;">
-    <div class="container" style="margin-bottom: 0;">
-      <div class="topnav" id="topnav">
-        <ul>
-          <li> <a href="login_admin" style="float: right;">Adminstration Login</a></li>
-  <li><a href="logout" style="float: right;">Logout</a></li>
-                </ul>
-      </div>
-    </div>
-  </div>
- </div>
-
-
-<div class="marquee">
-        Disaster strikes when you waver your concentration. Be Aware Always!
-    </div>
-
-
-<div class="tab" style="margin-top: 50px;">
-
-  <form method="post" action="lreq" style="margin-bottom: 0px;">
-    {{ csrf_field() }}
-  <button class="tablinks" onclick="form.submit()">Link Request</button>
-</form>
-  <form method="post" action="AdminReg" style="margin-bottom: 0px;">
-    {{ csrf_field() }}
-  <button class="tablinks" onclick="form.submit()">Admin Registration</button>
- </form> 
-  <form method="post" action="srakshan" style="margin-bottom: 0px;">
-    {{ csrf_field() }}
-  <button class="tablinks" onclick="form.submit()">Sarvasya rakshan</button>
- </form> 
-<form method="post" action="caware" style="margin-bottom: 0px;">
-  {{ csrf_field() }}
-  <button class="tablinks" onclick="form.submit()">Crime Awareness</button>
-  </form>
-  <form method="post" action="faq" style="margin-bottom: 0px;">
-    {{ csrf_field() }}
-  <button class="tablinks" onclick="form.submit()">Resources</button>
-</form>
-</div>       
-  <!-- //sidebar menu end -->
-  <!-- header-starts -->
  
-  <!-- //header-ends -->
 
-  <!-- main content start -->
-  <div id="RegReq" class="tabcontent" style="width: 85%; margin-top: 50px;">
-<div class="main-content" style="width: auto;">
 
-  <!-- content -->
-  <div class="container-fluid content-top-gap" style="margin-top: 0%;">
+ <!-- <div class="container-fluid" style="background-color: #b50d29; ">
+  
+      <div class="row" style="background-color: #b50d29;">
+       <div class="col-md-9 order-same order-md-2">
+            <div class="date">
+    <p class="headernew"><span id="datetime"></span></p>
+  </div>
+</div>
+ 
+        </div>
+      </div> -->
+<nav class="navbar navbar-expand-md  navbar-dark" style=" width: 100%; background-color: black; padding: 5px;">
+  
+ 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="row">
+  <div claass="collapse navbar-collapse" id="collapsibleNavbar">
+    <div class="date">
+    <p class="headernew"><span id="datetime"></span></p>
+  </div>
+</div>
+   
+    
+   </div>   
+  
+</nav>
+</div>
+
+
+
+    <div class="sidenav">
+    <img src="assets/images/download.png">
+    <h5 style="color:#b50d29; border-bottom:2px solid #ddd">HELLO ADMIN</h5>
+        <h4><a href="#about">DASHBOARD</a></h4>
+      <h4><a href="#about">REGISTRATION REQUESTS</a></h4>
+  <h4><a href="#services">REGISTRATION APPROVAL</a></h4>
+    <h4><a href="#clients">SARVASYA RAKSHAN</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+</div>
+    
+    <div class="main">
+      
+
+
 
     
-    <div class="welcome-msg pt-3 pb-4">
-      <h1>Hi <span class="text-primary">Officer</span>, Welcome back</h1>
-      <p>Very detailed & featured admin.</p>
-    </div>
-
-    <!-- statistics data -->
-    <div class="statistics">
+    <div class="as">
+    <div class="containerres">
       <div class="row">
-        <div class="col-xl-6 pr-xl-2">
-          <div class="row">
-            <div class="col-sm-6 pr-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-users"> </i>
-                <h3 class="text-primary number">2975 </h3>
-                <p class="stat-text">Total Users</p>
-              </div>
-            </div>
-            <div class="col-sm-6 pl-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-eye"> </i>
-                <h3 class="text-secondary number">5125 </h3>
-                <p class="stat-text">Daily Visitors</p>
-              </div>
-            </div>
+        <!-- {{-- statics --}} -->
+        <div class="column counter">
+          <div class="card card_border border-primary-top p-4" style="height: 115px;">
+            
+            <h4 class="text-primary number">Total complaints</h4>
+            
+            
           </div>
         </div>
-        <div class="col-xl-6 pl-xl-2">
-          <div class="row">
-            <div class="col-sm-6 pr-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-cloud-download"> </i>
-                <h3 class="text-success number">16689 </h3>
-                <p class="stat-text">Complaints</p>
-              </div>
-            </div>
-            <div class="col-sm-6 pl-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-cart"> </i>
-                <h3 class="text-danger number">1,250</h3>
-                <p class="stat-text">Solved Complaints</p>
-              </div>
-            </div>
+        <div class="column counter">
+          <div class="card card_border border-primary-top p-4" style="height: 115px;">
+            <!-- {{-- <i class="lnr lnr-eye"> </i> --}} -->
+            <h4 class="text-secondary number">FIR generated</h4>
+            
+            
           </div>
         </div>
+  
+        <div class="column counter">
+          <div class="card card_border border-primary-top p-4" style="height: 115px;">
+            <!-- {{-- <i class="lnr lnr-cloud-download"> </i> --}} -->
+             <h4 class="text-success number">Investigating</h4>
+           
+           
+          </div>
+        </div>
+        <div class="column counter">
+          <div class="card card_border border-primary-top p-4" style="height: 115px;">
+            {{-- <i class="lnr lnr-cart"> </i> --}}
+             <h4 class="text-danger number">Cancelled</h4>
+           
+          
       </div>
     </div>
+
+      </div>
+      <div class="row">
+  <div class="column" style="width: 100%;">
+    <div class="card" style="width: 100%;" >
     
     <!-- data tables -->
     <div class="data-tables">
@@ -372,157 +636,41 @@ if(typeof _bsa !== 'undefined' && _bsa) {
        
        </tbody>
               </table>
-
-
-            </div>
+ </div>
           </div>
-        </div>
-      </div>
-      
-    </div>
-    <!-- //data tables -->
+     
 
+</div>
     
-        <!-- //accordion style 1 -->
-      </div>
+    </div>
+  </div> 
 
-      
   
+ <!--  <div class="column">
+    <div class="card" id="">
+         
+   
+    </div>
   </div>
+ -->
 
-</div>
+</div> 
+    </div>
 
-  <!-- //content -->
-<!-- main content end-->
-</section>
-  <!--footer section start-->
+    </div>
+    </div>
+    </div>
+    
+    <footer class="page-footer" style="background-color: black;">
 
-<!--footer section end-->
-<!-- move top -->
-<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
-  <span class="fa fa-angle-up"></span>
-</button>
-
-</div>
-<script>
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () {
-    scrollFunction()
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById("movetop").style.display = "block";
-    } else {
-      document.getElementById("movetop").style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-<!-- /move top -->
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="assets/js/jquery-1.10.2.min.js"></script>
-
-<!-- chart js -->
-
-<script src="assets/js/utils.js"></script>
-<!-- //chart js -->
-
-<!-- Different scripts of charts.  Ex.Barchart, Stackedchart, Linechart, Piechart -->
-
-<!-- //Different scripts of charts.  Ex.Barchart, Stackedchart, Linechart, Piechart -->
-
-<!-- data tables js -->
-<script>
-  $(document).ready(function () {
-    $('#example').DataTable();
-  
-  });
-</script>
-<!-- //data tables js -->
-
-<script src="assets/js/jquery.dataTables.min.js"></script>
-
-
-<script src="assets/js/faq.js"></script>
-
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/scripts.js"></script>
-
-<!-- close script -->
-<script>
-  var closebtns = document.getElementsByClassName("close-grid");
-  var i;
-
-  for (i = 0; i < closebtns.length; i++) {
-    closebtns[i].addEventListener("click", function () {
-      this.parentElement.style.display = 'none';
-    });on () {
-    $('.sidebar-menu-collapsed').click(function () {
-      $('body').
-  }
-</script>
-<!-- //close script -->
-
-<!-- disable body scroll when navbar is in active -->
-<script>
-  $(functitoggleClass('noscroll');
-    })
-  });
-</script>
-<!-- disable body scroll when navbar is in active -->
-
- <!-- loading-gif Js -->
- <script src="assets/js/modernizr.js"></script>
- <script>
-     $(window).load(function () {
-         // Animate loader off screen
-         $(".se-pre-con").fadeOut("slow");;
-     });
- </script>
- <!--// loading-gif Js -->
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-<!-- Bootstrap Core JavaScript -->
-<script src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  window.onresize= function()
-  {
-    window.resize(500,500);
-  }
-</script>
-</body>
-</html>
+  <!-- Copyright -->
+    <div class="row footer-bottom">
+        <div  style ="padding :25px;margin-left: 120px; margin-top: 15px; text-align: center; color: white;"class="col-md-10">
+          
+            Site developed and maintained by Team Code Gear,<a href="https://www.facebook.com/pages/gitam-kablana/384890248243377" style="color: white;">GITAM</a> , Haryana. Send your feedbacks to <a href="https://mail.google.com/mail/u/1/#search/codegearsih2020%40gmail.com"  style="color: white;">codegearsih2020@gmail.com</a> 
+          
+        </div>
+    </div>
+    </footer>
+  </body>
+  </html>

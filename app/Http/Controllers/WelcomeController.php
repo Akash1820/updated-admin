@@ -6,7 +6,7 @@ use Illuminate\support\facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 use App\Mail\reject_reg;
-use App\Mail\Approve_reg;
+use App\Mail\Notify_all;
 use App\Mail\Link_approve;
 use App\Mail\Link_denied;
 
@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     public function index()
     {
         
-        return view('adminportal');
+        return view('login');
     }
 public function notfound()
 {
@@ -47,6 +47,48 @@ public function notfound()
 		return view('Error1');
 			}
 }
+
+function Dashbrd(Request $req){
+	$total_crime = DB::table('complaints')
+->count();
+$records=DB::table('complaint_track')
+->get();
+$solved =0;
+$submitted=0;
+$investigating=0;
+$cancelled=0;
+foreach($records as $data){
+if($data->status=="Complaint Submitted")
+{
+    $submitted= $submitted+1;
+}
+else if($data->status=="Under Observation")
+{
+    $investigating= $investigating+1;
+}
+else if($data->status=="Declined")
+{
+    $cancelled= $cancelled+1;
+}
+else if($data->status=="FIR")
+{
+    $solved= $solved+1;
+}
+}
+       $details= ['total_complaints'=>$total_crime,
+       'solved'=>$solved,
+       'investigating'=>$investigating,
+       'declined'=>$cancelled,
+     ];
+       
+         return view('dashboard')->with('details',$details);
+}
+
+
+
+
+
+
 function ip(Request $ip)
 	{
 	$session=$ip->session()->get('name');
@@ -73,10 +115,11 @@ function ip(Request $ip)
 		 }
 		}
 		else{
-			$complaint = DB::table('complaints')
-    		->where('PS_name',$ip->session()->get('station_address'))
-    		->get();
-    	 return view('welcome')->with('Complaint',$complaint);
+		// 	$complaint = DB::table('complaints')
+  //   		->where('PS_name',$ip->session()->get('station_address'))
+  //   		->get();
+  //   	 return view('welcome')->with('Complaint',$complaint);
+		return view('login');
 		}
 	}
 
@@ -129,7 +172,7 @@ function lout(Request $req){
     		$req->session()->forget('station_address');
     
 
-	return view('adminportal');
+	return view('login');
 
 }
 
@@ -161,8 +204,18 @@ function adminreg()
 function Emrgncy()
 {
 	 $complaint = DB::table('urgent_comp')->get();
+   $data=$this->get_counter();
+       $details= ['Complaint'=>$complaint,
+       'total_complaints'=>$data['total_complaints'],
+   'solved'=>$data['solved'],
+   'investigating'=>$data['investigating'],
+   'declined'=>$data['declined'],
+
+   ];
+       
+         return view('emergency')->with('details',$details);
         
-        return view('emergency')->with('Complaint',$complaint);
+        // return view('emergency')->with('Complaint',$complaint);
 	
 
 }
@@ -199,9 +252,77 @@ function login_admin($ip){
 			{
 			
 
-		return view('loginadmin');
+		return view('login');
 }
 }
+
+
+function admindash(Request $req){
+
+$user_id= $req->usrnm;
+    	$user_password= $req->psw;
+    	$get= DB::table('login_credential')
+    	->where([['User_ID','=',$user_id],['Password','=',$user_password]])
+    	->count();
+    	$data= DB::table('login_credential')
+    	->where([['User_ID','=',$user_id],['Password','=',$user_password]])
+    	->get();
+    	if($get!=0){
+    		
+    	foreach ($data as $item) {
+    		$req->session()->put('name',$user_id);
+    		$req->session()->put('password',$user_password);
+    		$req->session()->put('station_address',$item->PS_name);
+    	}
+    		// $complaint = DB::table('complaints')
+    		// ->where('PS_name',$req->session()->get('station_address'))
+    		// ->get();
+$total_crime = DB::table('complaints')
+->count();
+$records=DB::table('complaint_track')
+->get();
+$solved =0;
+$submitted=0;
+$investigating=0;
+$cancelled=0;
+foreach($records as $data){
+if($data->status=="Complaint Submitted")
+{
+    $submitted= $submitted+1;
+}
+else if($data->status=="Under Observation")
+{
+    $investigating= $investigating+1;
+}
+else if($data->status=="Declined")
+{
+    $cancelled= $cancelled+1;
+}
+else if($data->status=="FIR")
+{
+    $solved= $solved+1;
+}
+}
+       $details= ['total_complaints'=>$total_crime,
+       'solved'=>$solved,
+       'investigating'=>$investigating,
+       'declined'=>$cancelled,
+     ];
+       
+         return view('dashboard')->with('details',$details);
+
+    		
+    	//	return $req->session()->get('password');
+    	}
+    	else{
+    		return "username or password invalid";
+    	}
+       
+
+}
+
+
+
 function logadmin(Request $req){
 
 $reg = DB::table('admin_registration')->get();
@@ -346,11 +467,37 @@ $reg = DB::table('admin_linkreq')->get();
 
 function Portal(){
 
-	return view('adminportal');
+	return view('login');
 }
 
 function Home(){
 	return view('home');
 }
+
+
+function delete(){
+
+	// $reg = DB::table('admin_linkreq')->get();
+ //       $details= ['reg'=>$reg];
+       
+         // return view('aware-copy')->with('details',$details);
+	return view('awarenes');
+}
+
+function Admin_notification(Request $req){
+$msg=$req->message;
+	
+$get= DB::table('login_credential')
+->get();
+foreach($get as $data){
+	$details= ['message'=>$msg,
+	'name'=>$data->User_name
+];
+	 \Mail::to($data->e_mail)->send(new Notify_all($details));
+}
+
+return redirect()->back();
+}
+
 
 }

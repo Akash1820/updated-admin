@@ -1,163 +1,266 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
-  </head>
-    <style>
-        h2
-        {
-            margin-left: 10px;
-            color: #b50d29;
-        }
-        .pwd
-        {
-            margin-left: 200px;
-        }
-        p
-        {
-            margin-left: 140px;
-        }
-    legend
-        {
-            text-align: center;
-                  
-        }
-    fieldset
-        {
-              width: 35%;
-            margin-left: 495px;
-            background-color: ;
-            
-        }
-   .input-container {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  width: 100%;
-  margin-bottom: 15px;
+<head>
+  <title></title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+ * {
+   padding: 0;
+   margin: 0;
+}
+ *:focus {
+   outline: none;
 }
 
-.icon {
-  padding: 10px;
-  background:#b50d29;
-  color: white;
-  min-width: 50px;
-  text-align: center;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.input-field {
-  width: 100%;
-  padding: 10px;
-  outline: none;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.input-field:focus {
-  border: 2px solid #b50d29;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-    button
-        {
-            height: 36px;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ body {
+   font-family: "Poppins", sans-serif;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+ #bg {
+   background: #b50d29;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: -1;
+   clip-path: polygon(0 0, 55% 0, 45% 100%, 0% 100%);
+}
+
+
+ .underlineHover:after {
+   display: block;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background-color: #b50d29;
+   content: "";
+   transition: width 0.33s ease-in-out;
+}
+}
+ .underlineHover:hover {
+   color: #b50d29;
+}
+ .underlineHover:hover:after {
+   width: 100%;
+}
+ .wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   border-radius: 10px 10px 10px 10px;
+   min-height: 100%;
+}
+ .wrapper #form {
+   max-width: 500px;
+   position: relative;
+   box-shadow: 2px 2px 3px #b3b3b3;
+   border-radius: 10px 10px 10px 10px;
+   background: #fff;
+   position: relative;
+}
+ .wrapper #form #formHeader h2 {
+   text-align: center;
+   font-size: 15px;
+   font-weight: 400px;
+   text-transform: uppercase;
+   color: #ccc;
+   display: inline-block;
+   margin: 20px 10px 20px 10px;
+}
+ .wrapper #form #formHeader h2.inactive {
+   color: #ccc;
+}
+ .wrapper #form #formHeader h2.active {
+   color: #0d0d0d;
+   border-bottom: 2px solid #b50d29;
+}
+ .wrapper #form #formHeader i {
+   font-size: 4.5em;
+   margin: 0px;
+   color: #28a7e8;
+   text-shadow: 0px 2px 3px #28a7e8;
+}
+ .wrapper #form #formContent {
+   padding: 20px 20px;
+   position: relative;
+}
+ .wrapper #form #formContent form input[type=submit] {
+   display: inline-block;
+   background-color: #b50d29;
+   border: none;
+   color: white;
+   padding: 15px 70px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   text-transform: uppercase;
+   border-radius: 5px;
+   box-shadow: 0 2px 2px 0px grey;
+   font-size: 13px;
+   margin-top: 5px;
+}
+ .wrapper #form #formContent form input[type=text] {
+   background-color: #f6f6f6;
+   border: 2px solid #f6f6f6;
+   transition: all 0.5s ease-in-out;
+   padding: 15px 3px;
+   width: 90%;
+   margin: 5px;
+   border-radius: 5px;
+   text-align: center;
+   background-color: #f6f6f6;
+   font-size: 16px;
+   display: inline-block;
+}
+.wrapper #form #formContent form input[type=password] {
+   background-color: #f6f6f6;
+   border: 2px solid #f6f6f6;
+   transition: all 0.5s ease-in-out;
+   padding: 15px 3px;
+   width: 90%;
+   margin: 5px;
+   border-radius: 5px;
+   text-align: center;
+   background-color: #f6f6f6;
+   font-size: 16px;
+   display: inline-block;
+}
+ .wrapper #form #formContent form input[type=submit]:hover {
+   background-color: #b50d29;
+   border: none;
+}
+ .wrapper #form #formContent input[type=text]:focus {
+   background-color: #fff;
+   border: none;
+   border-bottom: 2px solid #b50d29;
+}
+.wrapper #form #formContent input[type=password]:focus {
+   background-color: #fff;
+   border: none;
+   border-bottom: 2px solid #b50d29;
+}
+ .wrapper #form #formContent input[type=text]:placeholder {
+   color: #ccc;
+}
+.wrapper #form #formContent input[type=password]:placeholder {
+   color: #ccc;
+}
+ .wrapper #form #formFooter {
+   padding: 10px 20px;
+  background-color: #f6f6f6;
+   border-top: 1px solid #e9e9e9;
+   border-radius: 0px 0px 10px 10px;
+}
+ .wrapper #form #formFooter a {
+   color: #b50d29;
+   padding: 10px 25px;
+   font-size: 1em;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+ .credits footer {
+   position: absolute;
+   bottom: 0;
+   right: 5px;
+   text-align: right;
+   font-size: 0.6em;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   color: #56baed;
+}
+ .credits footer p {
+   border: none;
+   padding: 0;
+}
+ .credits footer p strong {
+   font-size: 2em;
+   text-decoration: none;
+}
+ .credits footer p strong:hover {
+   color: #ff0909;
+   transition: all 0.4s ease-in-out;
+   font-weight: 1500;
+   font-size: 4em;
+}
+ .credits footer a {
+   color: #28a7e8;
+   text-decoration: none;
+   transition: all 0.4s ease-in-out;
+}
+ .credits footer a:hover {
+   color: #f22;
+   font-weight: 900;
+   font-size: 1.5em;
+}
+ 
+
+  </style>
+</head>
+<body>
+<div id="bg"></div>
+<div class="wrapper fadeInDown">
+  
+  <div id="form">
+   
+    <img src="assets/images/bprd-logo.png" alt="Avatar" class="avatar" style="height: 180px;">
+    <div id="formHeader">
+      <h2 class="active" > New Police Admin Registration Request </h2>
+      
+      <div class="fadeIn first">
+        <i class="fa fa-user-circle-o"></i>
+    </div>
+    <div id="formContent">
+      <form action="admin" method="post">
+      {{csrf_field()}}
+        
+        <input class="fadeIn third" type="text" placeholder="Username" name="usrnm" required autocomplete="off">
+        <input class="fadeIn third" type="text" placeholder="Police Station Name" name="station_name" required autocomplete="off">
+         <input class="fadeIn third" type="text" placeholder="Email" name="email" required autocomplete="off">
+         <input class="fadeIn third" type="text" placeholder="ID Number" name="id_num" required autocomplete="off">
+        <!-- <input type="submit" class="fadeIn fourth" value="Log In"> -->
+        <button style="  height: 36px;
             width: 100%;
             background-color: #b50d29;
             font-size: 25px;
-            color:white;
-        }
-    /* styling for toogle popup */
-    /* Popup container - can be anything you want */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-    </style>
-<body>
+            margin-top: 9px;
+            border-radius: 8px;
+            color:white;" onclick="form.submit()">Submit</button>
+      </form>
+    </div>
+   <!--  <div id="formFooter">
+        <a class="underlineHover" href="#">New Police Admin Registration Request</a>
+    </div> -->
+  </div>
+</div>
   
- <fieldset>
-  <legend><img src="assets/images/bprd-logo.jpg" text-align="center"></legend>
-     <center>
-     <h2>Bureau of Police Research and Development</h2>
-     <br><br>
-   </center>
-     <form class="chat-form" action="admin" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
-         <div class="input-container">
-    <i class="fa fa-user icon"></i>
-    <input class="input-field" type="text" placeholder="Username" name="usrnm" required autocomplete="off">
-  </div>
-         <div class="input-container">
-    <i class="fa fa-user icon"></i>
-    <input class="input-field" type="text" placeholder="Police Station Name" name="station_name" required autocomplete="off">
-  </div>
-         
-         <div class="input-container">
-    <i class="fa fa-envelope icon"></i>
-    <input class="input-field" type="text" placeholder="Email" name="email" required autocomplete="off">
-         </div>
-              
-          <div class="input-container">
-    <i class="fa fa-credit-card icon"></i>
-    <input class="input-field" type="text" placeholder="ID Number" name="id_num" required autocomplete="off">
-  </div>
-  
-
-         <button type="submit" onclick="submitted()">Send Request</button>
-     </form>
-    </fieldset>
-  </center>
-    </body>
-    <script>
+<script>
       var msg = '{{Session::get('alert')}}';
       var exist = '{{Session::has('alert')}}';
       if(exist){
@@ -170,4 +273,5 @@
 }
      
     </script>
+</body>
 </html>

@@ -1,5 +1,3 @@
-
-   
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +16,8 @@
 <script src = "https://code.highcharts.com/highcharts.js"></script>  
       <script src = "https://code.highcharts.com/modules/drilldown.js"></script>  
       <script src = "https://code.highcharts.com/modules/data.js"></script> 
-    <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
+	  <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
+
     <style>
        
        .highcharts-credits {
@@ -85,7 +84,6 @@ h3{
     margin-left: 0px;
     display: inline-block;
     border: 5px solid #ffff;
-    font-size: 8px;
     cursor: pointer;
     color:#b50d29
 }
@@ -100,7 +98,6 @@ h3{
 { width: 100% }
 .dataTables_filter input
 { width: 100% ;
-  
   box-shadow:0 4px 8px 0 #b50d29
 }
 .dataTables_filter input:focus
@@ -197,13 +194,13 @@ body{
         
 /*        glowing button*/
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-*{
+/**{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     margin-right: 0px;
   }
-
+*/
 .s{
     position: relative;
     display: inline-block;
@@ -345,13 +342,13 @@ body{
 
    
  .sidenav {
-  height: 81%;
+  height: 76%;
   width: 250px;
   position: fixed;
   z-index: 1;
   left: 0;
   bottom: 1px;
-  background-color: #fffffb;
+  background-color: #fefefe;
   overflow-x: hidden;
   border: outset;
   border-top-color: transparent;
@@ -363,8 +360,9 @@ body{
 .sidenav a {
   text-decoration: none;
   padding: 10px;
+
   display: block;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bolder;
   color: #b50d29;
   border-bottom:1px solid #ddd;
@@ -375,15 +373,8 @@ body{
 ::-webkit-scrollbar{
   width: 2px
 }
-.header a,
-.link {
-  
-}
 
-.link {
-  color: #3B78E7;
-  display: inline-block;
-}
+
 
 /*.sidenav a {
   padding: 6px 8px 6px 16px;
@@ -392,13 +383,14 @@ body{
   color: #818181;
   display: block;
 }*/
-.sideNav img{
-  height: 20%;
-  align: center
+.img{
+
+  max-width: 30%;
+  border-radius: 50%;
 }
 .sidenav a:hover {
   color: #ffffff;
-  background-color: #b50d29;
+  background-color: darkgreen
 }
 
 .main {
@@ -434,7 +426,7 @@ body{
       <div class="row" style="background-color: #b50d29;">
         <div class="col-md-9 order-same order-md-2">
             <div class="date">
-    <p class="headernew" style="color: #b50d29; font-size: 8px;">Made With Love</p>
+    <p class="headernew" style="color: #b50d29; font-size: 3px;">Made With Love</p>
   </div>
 </div>
   <!-- <div class="col-md-3 order-same order-md-2">
@@ -466,21 +458,7 @@ body{
         </div>
       </div>
     </div>
- 
-
-
- <!-- <div class="container-fluid" style="background-color: #b50d29; ">
-  
-      <div class="row" style="background-color: #b50d29;">
-       <div class="col-md-9 order-same order-md-2">
-            <div class="date">
-    <p class="headernew"><span id="datetime"></span></p>
-  </div>
-</div>
- 
-        </div>
-      </div> -->
-<nav class="navbar navbar-expand-md  navbar-dark" style=" width: 100%; background-color: black; padding: 5px;">
+ <nav class="navbar navbar-expand-md  navbar-dark" style=" width: 100%; background-color: black; padding-top: 0px; padding-bottom: 0px;">
   
  
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -499,17 +477,72 @@ body{
 </nav>
 </div>
 
+ <!-- <div class="container-fluid" style="background-color: #b50d29; ">
+  
+      <div class="row" style="background-color: #b50d29;">
+       <div class="col-md-9 order-same order-md-2">
+            <div class="date">
+    <p class="headernew"><span id="datetime"></span></p>
+  </div>
+</div>
+ 
+        </div>
+      </div> -->
+
+<!--
+    <div class="marquee">
+        <p class="pp">Disaster strikes when you waver your concentration.Be Aware!</p>
+    </div>
+<div class="banner">
+        <section id="dg-container" class="dg-container">
+            <div class="dg-wrapper">
+                <a href="#">
+                    <img src="https://api.time.com/wp-content/uploads/2019/12/india-women-protests.jpg">
+                </a>
+                <a href="#">
+                    <img src="https://www.grabellaw.com/docs/how_to_say_no_to_drugs_pic.jpg">
+                </a>
+                <a href="#">
+                    <img src="https://gumlet.assettype.com/thequint-fit%2F2019-10%2Ff495df0c-e552-4223-bef4-a29f432e53be%2FiStock_486203059.jpg?auto=format%2Ccompress&w=600&dpr=2.6">
+                </a>
+                <a href="#">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTP7wQRAgP-Dn_weNw8Biyrfr-LmA8tmAbUfg&usqp=CAU">
+                </a>
+                <a href="#" >
+                    <img src="https://astanatimes.com/wp-content/uploads/2014/11/shutterstock_128008547.jpg">
+                </a>
+            </div>
+            <ol class="button" id="lightButton">
+                <li index="0">
+                <li index="1">
+                <li index="2">
+                <li index="3">
+                <li index="4">
+            </ol>
+            <nav>
+                <span class="dg-prev"></span>
+                <span class="dg-next"></span>
+            </nav>
+        </section>
+    </div> -->
 
 
     <div class="sidenav">
-    <img src="assets/images/download.png">
-    <h5 style="color:#b50d29; border-bottom:2px solid #ddd">HELLO ADMIN</h5>
-      <h4><a href="emrgncy">ANONYMOUS COMPLAINT</a></h4>
-      <h4><a href="login">GENERAL COMPLAINT</a></h4>
+      <div style="display:flex ; border-bottom:2px solid #ddd"> 
+    <img class="img" src="assets/images/bprd-logo.jpg">
+    <h5 style="color:#b50d29;text-align:right;margin-top:15%">HELLO ADMIN</h5></div>
+      <h4><a href="#about">DASHBOARD</a></h4>
+      <h4><a href="#about">REGISTRATION REQUESTS</a></h4>
+  <h4><a href="#services">REGISTRATION APPROVAL</a></h4>
     <h4><a href="#clients">SARVASYA RAKSHAN</a></h4>
       <h4><a href="#contact">HELPLINE</a></h4>
-      <h4><a href="logout">LOGOUT</a></h4>
-
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
+      <h4><a href="#contact">HELPLINE</a></h4>
 </div>
     
     <div class="main">
@@ -518,173 +551,134 @@ body{
 
 
     
-    <div class="as">
+    <div class="as" style="margin-top: 50px;">
     <div class="containerres">
       <div class="row">
-        <!-- {{-- statics --}} -->
+      
         <div class="column counter">
-          <div class="card card_border border-primary-top p-4" style="height: 115px;">
-            
+          <div class="card card_border border-primary-top p-4">
+        
             <h4 class="text-primary number">Total complaints</h4>
-            
+            {{-- <h3 class="text-primary number">{{$details['total_complaints']}} </h3> --}}
             
           </div>
         </div>
         <div class="column counter">
-          <div class="card card_border border-primary-top p-4" style="height: 115px;">
-            <!-- {{-- <i class="lnr lnr-eye"> </i> --}} -->
+          <div class="card card_border border-primary-top p-4">
+         
             <h4 class="text-secondary number">FIR generated</h4>
-            
+            {{-- <h3 class="text-secondary number">{{$details['solved']}} </h3> --}}
             
           </div>
         </div>
   
         <div class="column counter">
-          <div class="card card_border border-primary-top p-4" style="height: 115px;">
-            <!-- {{-- <i class="lnr lnr-cloud-download"> </i> --}} -->
+          <div class="card card_border border-primary-top p-4">
+  
              <h4 class="text-success number">Investigating</h4>
-           
+            {{-- <h3 class="text-success number">{{$details['investigating']}} </h3> --}}
            
           </div>
         </div>
         <div class="column counter">
-          <div class="card card_border border-primary-top p-4" style="height: 115px;">
-            {{-- <i class="lnr lnr-cart"> </i> --}}
+          <div class="card card_border border-primary-top p-4">
+
              <h4 class="text-danger number">Cancelled</h4>
-           
+            {{-- <h3 class="text-danger number">{{$details['declined']}}</h3> --}}
           
       </div>
     </div>
 
       </div>
       <div class="row">
-  <div class="column" style="width: 100%;">
-    <div class="card" style="width: 100%;" >
-     <!-- data tables -->
+   
+ 
+
+
+  
+  <div class="column" style="width: 100%;overflow:auto">
+    <div class="card" style="width: 100%;" id= "ps">
+ 
     <div class="data-tables" style="width: 100%;">
         <div class="row">
           <div class="col-lg-12 mb-4">
-
-            <h3 class="card__title" >ANONYMOUS COMPLAINT INFO</h3>
-            <div class="table-responsive">
-              <table id="example" class="display" style="width:100%">
-             
-
-              <thead>
-        <tr>
-          <th>Complaint_Id</th>
-
-          <th>Report Time</th>
-          <th>Police Station</th>
-          <th>Police Station Address</th> 
-          <th>Crime Date</th>
-          <th>Crime_Location</th> 
-          <th>Complaint</th>
-          
-          <th>Suspect</th>
-          <th>Proof</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-                <tbody>
-                @foreach($Complaint as $row)
-                 <tr>
-          <td>{{$row->id}}</td>
-          <td>{{$row->reporttime}}</td>
-          <td>{{$row->ps_name}}</td>
-          <td>{{$row->loc_rel}}</td>
-          <td>{{$row->reportdate}}</td>
-          <td>{{$row->location}}</td>
-          <td>{{$row->detail}}</td>
-          <td>{{$row->suspect}}</td>  
-          <td>{{$row->proof}}</td>
-          
-          
- <td>
-  <form action="status_update/{{$row->id}}" method="post">
-   {{csrf_field()}}
-  <select name="status" onchange="form.submit()">
-<option value="Read">Read</option>
-<option value="Investigation">Investigation</option>
-<option value="Complete">Completed</option>
-<option value="Cancelled">Cancelled</option>
-      </select>
-    </form>
-    </td>
+   
+              <h3 class="card__title" style="color: #b50d29;" >REGISTRATION REQUEST</h3>
+              <div class="table-responsive" >
+                <table id="example" class="display" style="width:100%">
+               
   
-    <td>
+                <thead style="text-align:left">
+          <tr>
+            <th>Name</th>
+<th>Staion Name</th>
 
-   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#anyid">
-  Upload Report
-</button>
+<th>E-Mail</th>
+<th>IP Address</th>
+<th>ID-Number</th>
+<th>ID Proof</th>
+<th>E-Sign</th>
+<th>Accept</th>
+<th>Decline</th>
+          </tr>
+        </thead>
+        <tbody style="text-align: left;padding:10px">
 
-<!-- Modal -->
-<div class="modal " id="anyid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Report Update:</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      
-
-      <form method="post" action="/store" enctype="multipart/form-data" >
-        {{csrf_field()}}
-  <div class="form-group">
-      <label for="inputEmail4">Investigating Officer:</label>
-      <input type="text" class="form-control" name="officier_name" placeholder="Officer Name">
-    </div>
-    <div class="form-group">
-      <label for="inputPassword4">Date:</label>
-      <input type="date" class="form-control" name="date" placeholder="DD/MM/YYYY">
-    </div>
-  <div class="form-group">
-    <label for="inputAddress">Officer Remark:</label>
-    <input type="text" class="form-control" name="remark" placeholder="Remark (Atleas 50 words)">
-  </div>
-  <div class="form-group">
-    <label for="staus">Status:</label>
-  
-    </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Investigation Report</label>
-    <input type="file" name="file" onchange="form.submit()" onclick="">
-  </div>
-</form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
-          </td>
-          @endforeach
-         
-          
-        </tr>
-       
-       </tbody>
-              </table>
-            </div>
-          </div>
      
-
-</div>
+          @foreach($details['reg'] as $row)
+          <tr>
+   
+   <td>{{$row->Name}}</td>
+   <td>{{$row->PS_name}}</td>
+   
+   <td>{{$row->e_mail}}</td>
+   <td>{{$row->Ip_Address}}</td>
+   <td>{{$row->ID_number}}</td>  
+   <td>{{$row->ID_proof}}</td>
+   <td>{{$row->E_sign}}</td>
+   
+   
+   
+   <td>
+   
+   <form method="post" action="approve/{{$row->ID_number}}">
+   {{ csrf_field() }}
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#anyid" onclick="form.submit()">
+   Accept
+   </button>
+   </form>
+   </td>
+   <td>
+  
+   <form method="post" action="reject/{{$row->ID_number}}">
+   {{ csrf_field() }}
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#anyid" onclick="form.submit()">
+   Decline
+   </button>
+   </form>
+   </td> 
+   
+   
+   </tr>
+   @endforeach   
+        </tbody>  
+    </table>   
+              </div>
+            {{-- </div> --}}
+          </div>
+        </div>
+    </div>
     
     </div>
   </div> 
 
+  <div class="column">
+    
   
+
+
+  </div>
+
  <!--  <div class="column">
     <div class="card" id="">
          
@@ -694,11 +688,9 @@ body{
  -->
 
 </div> 
-    </div>
+    </div></div>
 
-    </div>
-    </div>
-    </div>
+    
     
     <footer class="page-footer" style="background-color: black;">
 
@@ -710,6 +702,44 @@ body{
           
         </div>
     </div>
-    </footer>
-  </body>
-  </html>
+
+  </div>
+    <!-- data tables js -->
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+        "pagingType": "simple_numbers",
+        "pageLength": 7,
+        "bInfo" : false,
+    });
+  
+  });
+</script>
+<!-- //data tables js -->
+
+<script src="assets/js/jquery.dataTables.min.js"></script>
+
+
+<script src="assets/js/faq.js"></script>
+
+<script src="assets/js/jquery.nicescroll.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+
+</html>
